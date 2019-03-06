@@ -11,6 +11,38 @@ function Reverse(){
         reversed);
 }
 
+function MostOccurrances(){
+    let stringToGetOccurrances = prompt("Enter a word/sentence");
+
+    let mostOccurring = stringToGetOccurrances[0];
+    let maxOccurrances = 0;
+
+    for(let i = 0; i < stringToGetOccurrances.length; i++){
+        if(stringToGetOccurrances[i] === " "){
+            continue;
+        }
+
+        let tmpOccurrances = 1;
+        for(let j = i + 1; j < stringToGetOccurrances.length; j++){
+            if(stringToGetOccurrances[i] === " "){
+                continue;
+            }
+
+            if(stringToGetOccurrances[i] === stringToGetOccurrances[j]){
+                tmpOccurrances++;
+            }
+        }
+
+        if(tmpOccurrances > maxOccurrances){
+            maxOccurrances = tmpOccurrances;
+            mostOccurring = stringToGetOccurrances[i];
+        }
+    }
+
+    alert("The most occurring letter is\n\n" +
+        mostOccurring + "\n\n" + "Occurring " + maxOccurrances + " times");
+}
+
 let choice = "";
 
 do{
@@ -25,7 +57,7 @@ do{
             Reverse();
             break;
         case "2":
-
+            MostOccurrances();
             break;
         case "3":
 
