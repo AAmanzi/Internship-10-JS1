@@ -60,6 +60,22 @@ function Capitalize(){
         capitalized);
 }
 
+function ReverseEachWord(){
+    let stringToReverse = prompt("What word/sentence would you like to reverse?").split(" ");
+    let reversed = "";
+
+    for(let i = 0; i < stringToReverse.length; i++){
+        let tmpReversed = "";
+        for(let j = stringToReverse[i].length-1; j >= 0; j--){
+            tmpReversed += stringToReverse[i][j];
+        }
+        reversed += tmpReversed  + " ";
+    }
+
+    alert("Your reversed sentence is\n\n" +
+    reversed);
+}
+
 let choice = "";
 
 do{
@@ -80,7 +96,7 @@ do{
             Capitalize();
             break;
         case "4":
-
+            ReverseEachWord();
             break;
     }
 
