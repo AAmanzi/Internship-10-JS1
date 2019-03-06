@@ -43,6 +43,23 @@ function MostOccurrances(){
         mostOccurring + "\n\n" + "Occurring " + maxOccurrances + " times");
 }
 
+function Capitalize(){
+    let stringToCapitalize = prompt("What word/sentence would you like to capitalize?");
+    let capitalized = stringToCapitalize[0].toUpperCase();
+
+    for(let i = 1; i < stringToCapitalize.length; i++){
+        if(stringToCapitalize[i-1] === " "){
+            capitalized += stringToCapitalize[i].toUpperCase();
+        }
+        else{
+            capitalized += stringToCapitalize[i].toLowerCase();
+        }
+    }
+
+    alert("Your capitalized word/sentence is\n\n" +
+        capitalized);
+}
+
 let choice = "";
 
 do{
@@ -60,7 +77,7 @@ do{
             MostOccurrances();
             break;
         case "3":
-
+            Capitalize();
             break;
         case "4":
 
